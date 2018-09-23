@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
+import API from "./utils/API";
+const dialogflow = require('dialogflow');
+
 
 class App extends Component {
+  state = {
+    userInput: "",
+  };
+
+  handleInputChange = event => {
+    // Destructure the name and value properties off of event.target
+    // Update the appropriate state
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+
+    event.preventDefault();
+    API.getResponse(this.state.userInput)
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div id="page-top">

@@ -24,12 +24,14 @@ if (process.env.NODE_ENV === "production") {
 // =====================================
 // let apiRoutes = require("./routes");
 // app.use("/api", apiRoutes);
-// app.get("/api", function (req, res) {
-//   axios
-//     .get(dialogflow, { params: req.query })
-//     .then(({ data: { results } }) => res.json(results))
-//     .catch(err => res.status(422).json(err));
-// })
+app.get("/api", function (req, res) {
+  axios
+    // .post("https://dialogflow.googleapis.com/v2beta1/{session=" + "311ai" + "/*/" + "" 
+    // projects/*/agent/sessions/*}:detectIntent")
+    // .get(dialogflow, { params: req.query })
+    .then(({ data: { results } }) => res.json(results))
+    .catch(err => res.status(422).json(err));
+})
 app.use("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
