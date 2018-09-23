@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 require('dotenv').config();
+// const axios = require("axios");
+// const dialogflow = require('dialogflow');
 
 // Initialize Express
 // =====================================
@@ -14,7 +16,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Use express.static to serve the public folder as a static directory
-// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
@@ -23,7 +24,13 @@ if (process.env.NODE_ENV === "production") {
 // =====================================
 // let apiRoutes = require("./routes");
 // app.use("/api", apiRoutes);
- app.use("/", function (req, res) {
+// app.get("/api", function (req, res) {
+//   axios
+//     .get(dialogflow, { params: req.query })
+//     .then(({ data: { results } }) => res.json(results))
+//     .catch(err => res.status(422).json(err));
+// })
+app.use("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
