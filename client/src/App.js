@@ -106,7 +106,7 @@ class App extends Component {
               <h2 className="text-white-50 mx-auto mt-2 mb-5">Access to government services for all.</h2>
               <iframe
                 allow="microphone;"
-                width="350"
+                width="500"
                 height="430"
                 src="https://console.dialogflow.com/api-client/demo/embedded/497dea79-573f-4fa0-b88b-e9af50ba4119"
                 title="chat-bot"
