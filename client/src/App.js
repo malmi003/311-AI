@@ -1,30 +1,73 @@
 import React, { Component } from 'react';
 import './App.css';
-import API from "./utils/API";
-const dialogflow = require('dialogflow');
 
+// code commented out is not functional
+// import API from "./utils/API";
+// const dialogflow = require('dialogflow');
+
+// You can find your project ID in your Dialogflow agent settings
+// const projectId = 'ai-dummy'; //https://dialogflow.com/docs/agents#settings
+// const sessionId = 'quickstart-session-id';
+// const query = 'hello';
+// const languageCode = 'en-US';
+ 
+// // Instantiate a DialogFlow client.
+// const dialogflow = require('dialogflow');
+// const sessionClient = new dialogflow.SessionsClient();
+ 
+// // Define session path
+// const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+ 
+// // The text query request.
+// const request = {
+//   session: sessionPath,
+//   queryInput: {
+//     text: {
+//       text: query,
+//       languageCode: languageCode,
+//     },
+//   },
+// };
+ 
+// Send request and log result
+// sessionClient
+//   .detectIntent(request)
+//   .then(responses => {
+//     console.log('Detected intent');
+//     const result = responses[0].queryResult;
+//     console.log(`  Query: ${result.queryText}`);
+//     console.log(`  Response: ${result.fulfillmentText}`);
+//     if (result.intent) {
+//       console.log(`  Intent: ${result.intent.displayName}`);
+//     } else {
+//       console.log(`  No intent matched.`);
+//     }
+//   })
+//   .catch(err => {
+//     console.error('ERROR:', err);
+//   });
 
 class App extends Component {
   state = {
     userInput: "",
   };
 
-  handleInputChange = event => {
-    // Destructure the name and value properties off of event.target
-    // Update the appropriate state
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+  // handleInputChange = event => {
+  //   // Destructure the name and value properties off of event.target
+  //   // Update the appropriate state
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
-  handleFormSubmit = event => {
+  // handleFormSubmit = event => {
 
-    event.preventDefault();
-    API.getResponse(this.state.userInput)
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
-  };
+  //   event.preventDefault();
+  //   API.getResponse(this.state.userInput)
+  //     .then(data => console.log(data))
+  //     .catch(err => console.log(err));
+  // };
 
   render() {
     return (
