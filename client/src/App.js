@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import SimpleTabs from './SimpleTabs';
 
 // code commented out is not functional
 // import API from "./utils/API";
@@ -98,6 +99,7 @@ class App extends Component {
 
         {/* <!-- Header --> */}
         <header className="masthead">
+        <SimpleTabs />
           <div className="container d-flex h-100 align-items-center">
             <div className="mx-auto text-center">
               <h1 className="mx-auto my-0 text-uppercase">311 AI</h1>

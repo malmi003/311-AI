@@ -4,6 +4,7 @@
   "private": true,
   "main": "server.js",
   "dependencies": {
+    "@material-ui/core": "^3.1.0",
     "body-parser": "^1.17.2",
     "dialogflow": "^0.6.0",
     "dotenv": "^6.0.0",
